@@ -4,9 +4,8 @@
 ### QUESTION 1:
 
 ````
-![Screenshot (3)](https://github.com/RAGHIBRIZWAN/PfFall23/assets/142868123/3ab1b7cc-79dd-4ebd-95b3-5d694769d83f)
+![Screenshot (3)](https://github.com/RAGHIBRIZWAN/PfFall23/assets/142868123/453f9de6-8f1e-40d8-8047-3d4ffe8e639d)
 
-![Screenshot (4)](https://github.com/RAGHIBRIZWAN/PfFall23/assets/142868123/edf95d46-e919-4db9-b3cd-9c410fd75d88)
 
 ````
 
