@@ -16,3 +16,7 @@
 ### TASK#5:
 ![image](https://github.com/RAGHIBRIZWAN/PfFall23/assets/142868123/b47558a0-daa7-4f42-a127-4c1f75afd60a)
 
+### TASK#6:
+![image](https://github.com/RAGHIBRIZWAN/PfFall23/assets/142868123/e07697cf-6f1f-4e6e-8d94-5a13d1b54c58)
+
+### TASK#7:
