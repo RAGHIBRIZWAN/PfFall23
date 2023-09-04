@@ -20,7 +20,12 @@
 ![New Doc 09-04-2023 15 16_3](https://github.com/RAGHIBRIZWAN/PfFall23/assets/142868123/27ec1d5b-fdc8-42e9-87ed-6b7a63b78d99)
 
 ### PROBLEM # 7:
+
+### PAGE 1:
 ![New Doc 09-04-2023 15 16_7](https://github.com/RAGHIBRIZWAN/PfFall23/assets/142868123/ba1566ca-96b7-4e33-900d-81eee0df2e26)
+
+
+### PAGE 2:
 ![New Doc 09-04-2023 15 16_8](https://github.com/RAGHIBRIZWAN/PfFall23/assets/142868123/c4b0c52b-08c0-4f24-b92f-e7fd6e609098)
 
 ### PROBLEM # 8:
