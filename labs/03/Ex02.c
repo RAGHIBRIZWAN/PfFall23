@@ -1,3 +1,6 @@
+#RAGHIB RIZWAN RABANI
+##23k-0012 B-AI
+
 #include <stdio.h>
 int main(){
 	int a;
