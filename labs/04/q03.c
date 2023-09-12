@@ -4,25 +4,24 @@
 * Date: 12/09/2023
 */
 
-
 #include <stdio.h>
 
 int main() {
     int n;
-    printf("Enter the value of n: ");
+    printf("Enter the number of integers: ");
     scanf("%d", &n);
-    
+
+    int sum = 0;
     int i = 0;
-    
-    while(i<n) {
+    while(i<n){
         i = i+1;
-        int j = 0;
-        while (j<n)  {
-            j = j+1;
-            printf("*");
-        }
-        printf("\n");
+        int num;
+        printf("Enter an integer: ");
+        scanf("%d", &num);
+        sum+= num * num;
     }
+
+    printf("The sum of the squares is: %d\n", sum);
 
     return 0;
 }
