@@ -1,27 +1,27 @@
 /*
 * Programmer: Raghib Rizwan Rabani
+* Roll no: 23K0012
 * Date: 12/09/2023
 */
-
 
 #include <stdio.h>
 
 int main() {
     int n;
-    printf("Enter the number of integers: ");
+    printf("Enter the value of n: ");
     scanf("%d", &n);
-
-    int sum = 0;
+    
     int i = 0;
-    while(i<n){
+    
+    while(i<n) {
         i = i+1;
-        int num;
-        printf("Enter an integer: ");
-        scanf("%d", &num);
-        sum+= num * num;
+        int j = 0;
+        while (j<n)  {
+            j = j+1;
+            printf("*");
+        }
+        printf("\n");
     }
-
-    printf("The sum of the squares is: %d\n", sum);
 
     return 0;
 }
