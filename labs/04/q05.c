@@ -1,3 +1,8 @@
+/*
+* Programmer: Raghib Rizwan Rabani
+* Roll no: 23K0012
+* Date: 12/09/2023
+*/
 
 
 #include <stdio.h>
