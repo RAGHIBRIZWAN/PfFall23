@@ -1,3 +1,9 @@
+/*
+* Programmer: Raghib Rizwan Rabani
+* Date: 12/09/2023
+*/
+
+
 #include <stdio.h>
 
 int main() {
