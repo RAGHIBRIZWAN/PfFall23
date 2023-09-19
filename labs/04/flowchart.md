@@ -17,3 +17,7 @@
 ## Q05:
 
 ![New Doc 09-12-2023 23 06_5](https://github.com/RAGHIBRIZWAN/PfFall23/assets/142868123/6cad702e-da6c-4b7c-89a1-c134e0b98bac)
+
+## Q06:
+
+![IMG20230919212623](https://github.com/RAGHIBRIZWAN/PfFall23/assets/142868123/a584a8f8-e263-47e5-b4d1-99d5239f7fee)
