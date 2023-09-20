@@ -1,22 +1,15 @@
 #include <stdio.h>
 
 void main() {
+    int num = 0;
+    printf("ENTER 8 NUMBERS IN 0s AND 1s: ");
+    scanf("%d",&num);
+    int a =0;
+    a = num%10000;
+    printf("%04d",a);
     
-	int a=0;
-	int b=0;
-
-	printf("ENTER 4 DIGIT NUMBER IN 0s AND 1s: ");
-	scanf("%04d",&a);
-
-	printf("ENTER 4 DIGIT NUMBER IN 0s AND 1s: ");
-	scanf("%04d",&b);
-	
-	printf("%04d",a);
-	printf("%04d\n",b);
-	
-	int m = a;
-	int n =b;
-	
-	printf("%04d",n);
-	printf("%04d",m);
+    int b =0;
+    b = num/10000;
+    printf("%04d",b);
+    
 }
