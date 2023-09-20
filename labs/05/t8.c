@@ -10,7 +10,7 @@ void main() {
         else if(a >=0 && a<=100){
             printf("It is evening time so moderate brightness");
         }
-        else if("a >= 101 && a<= 500"){
+        else if(a >= 101 && a<= 500){
             printf("Lighting Low Brightness");
         }
         else{
