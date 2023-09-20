@@ -31,6 +31,7 @@ void main(){
 	if(d == 1 && g == 1){
 		printf("bits are off \n");
 		printf("%d",d = 0);
+		printf("%d",g=0);
 	}
 	else{
 		printf("ALL IS OK");
