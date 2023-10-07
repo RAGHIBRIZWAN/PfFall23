@@ -1,7 +1,7 @@
 /*
 * Programmer = Raghib Rizwan Rabani
 * Roll no: = 23K0012
-* Desc: Checking if a number is perfect number or not
+* Desc: Finding LCM and GCD.
 */
 
 #include <stdio.h>
