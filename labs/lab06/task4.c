@@ -1,7 +1,7 @@
 /*
 * Programmer = Raghib Rizwan Rabani
 * Roll no: = 23K0012
-* Desc: Checking if a number is perfect number or not
+* Desc: if the program exceeds 9 it output even or odd or if not then the number will be written in english.
 */
 
 #include <stdio.h>
