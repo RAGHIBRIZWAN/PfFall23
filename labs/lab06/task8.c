@@ -1,4 +1,8 @@
-
+/*
+* Programmer = Raghib Rizwan Rabani
+* Roll no: = 23K0012
+* Desc: Output numbers in reverse order.
+*/
 
 #include <stdio.h>
 
