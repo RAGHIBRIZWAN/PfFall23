@@ -1,7 +1,13 @@
+/*
+* Programmer = Raghib Rizwan Rabani
+* Roll no: = 23K0012
+* Desc: Finding maximum and minimum  number in an Array.
+*/
+
 #include<stdio.h>
 
 int main() {
-    int arr[10] = {};
+    int arr[10] = {}; //initialization and declaration
     int i = 0; //initialization and declaration
     int a = 0; //initialization and declaration
     while(i<=9){
@@ -11,7 +17,7 @@ int main() {
     i++;
     } //end while
 
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n = sizeof(arr) / sizeof(arr[0]); //initialization and declaration
 
     int min = arr[0]; //initialization and declaration
     int max = arr[0]; //initialization and declaration
