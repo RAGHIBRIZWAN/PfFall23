@@ -1,3 +1,9 @@
+/*
+* Programmer = Raghib Rizwan Rabani
+* Roll no: = 23K0012
+* Desc: To rotate Array  left by d position.
+*/
+
 #include <stdio.h>
 
 int main(){
