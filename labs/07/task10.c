@@ -20,11 +20,11 @@ array which adds to a given number S.
     scanf("%d", &sum);
      
     for(int i=0;i<num;i++){
-        hold=0;
+        hold=arr[i];
         for(int j=i+1;j<num;j++){
             hold += arr[j];
             if(hold == sum){
-                startingindex = i+1;
+                startingindex = i;
                 endindex = j;
                 break;
             }
