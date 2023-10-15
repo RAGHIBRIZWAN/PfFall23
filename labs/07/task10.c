@@ -1,4 +1,5 @@
-/*programmer:Syed Fahad Faheem Shah(23k-0062)
+/*Programmer: Raghib Rizwan Rabani
+  Roll no: 23K-0012
   Description: Taking an unsorted array by user that contains only + integers, find a continuous sub-
 array which adds to a given number S.
   date:10/10/2023
