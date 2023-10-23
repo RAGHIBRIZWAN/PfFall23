@@ -1,3 +1,10 @@
+/* 
+Programmer: Raghib Rizwan Rabani
+Roll No: 23k-0012
+Date: 3-oct-2023 
+Description: multiplication of 2x2 matrix
+*/
+
 #include <stdio.h>
 
 int main() {
