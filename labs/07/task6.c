@@ -1,3 +1,10 @@
+/*
+* Programmer = Raghib Rizwan Rabani
+* Roll no: = 23K0012
+* Desc: Take an array with N elements as input, and then output the frequency of each element present in the
+array.
+*/
+
 #include <stdio.h>
 
 int main() {
