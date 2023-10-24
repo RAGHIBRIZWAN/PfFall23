@@ -1,3 +1,13 @@
+/*
+  Programmer: Raghib Rizwan Rabani 
+  Roll No: 23K-0012
+  Date: 24 oct 2023
+  Desc:Write a C program with a user-defined function calculate to perform basic arithmetic
+operations such as addition, subtraction, multiplication, and division. The
+program should take two numbers and an operation choice as input, and then use
+the function to perform the operation.
+*/
+
 #include <stdio.h>
 
 int arth(int a,char opr,int b){
