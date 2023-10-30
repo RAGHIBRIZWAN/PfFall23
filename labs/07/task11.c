@@ -5,7 +5,7 @@
   Return the generated matrix.
   date:10/10/2023
 
-  I took help of Fahad Faheem.
+  I took help from Fahad Faheem.
  */
 #include <stdio.h>
 
