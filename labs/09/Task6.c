@@ -3,7 +3,7 @@
 int GCD(int a, int b,int max){
 
     if(a % max == 0  && b % max == 0){
-            printf("%d ",max);
+            printf("Answer By Recursion: %d\n ",max);
             return 0;
     }
     GCD(a,b,max-1);
@@ -33,11 +33,11 @@ int main(){
 
     c = mul / max;
 
-    printf("%d",c);
-    return 0;
-
     if(a<b){max=a;}
     else{max=b;}
 
     GCD(a,b,max);
+
+    printf("Answer By Loops: %d",c);
+    return 0;
 }
