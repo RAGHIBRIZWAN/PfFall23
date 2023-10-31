@@ -1,3 +1,10 @@
+/*
+Programmer: Raghib Rizwan Rabani
+Roll No: 23K-0012
+Date: 31/10/2023
+Desc: Reverse the array.
+*/
+
 #include <stdio.h>
 
 void reverse(int *arr, int size){
