@@ -1,3 +1,10 @@
+/*
+Programmer: Raghib Rizwan Rabani
+Roll No: 23K-0012
+Date: 31/10/2023
+Desc: Print address and value using pointer arthimetic.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
