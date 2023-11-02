@@ -1,3 +1,10 @@
+/*
+Programmer: Raghib Rizwan Rabani
+Roll No: 23K-0012
+Date: 31/10/2023
+Desc: Finding n fibonacci numbers using recursion.
+*/
+
 #include <stdio.h>
 
 int fib(int a, int b, int sum, int n){
