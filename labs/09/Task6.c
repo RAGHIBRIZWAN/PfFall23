@@ -1,3 +1,10 @@
+/*
+Programmer: Raghib Rizwan Rabani
+Roll No: 23K-0012
+Date: 31/10/2023
+Desc: Finding GCD using recursion and loops.
+*/
+
 #include <stdio.h>
 
 int GCD(int a, int b,int max){
