@@ -1,3 +1,11 @@
+/*
+Programmer: Raghib Rizwan Rabani
+Roll No: 23K-0012
+Date: 31/10/2023
+Desc: Finding factorial using recursion.
+*/
+
+
 #include <stdio.h>
 
 int fact(int n){
