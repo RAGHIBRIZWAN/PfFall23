@@ -1,3 +1,10 @@
+/*
+Programmer: Raghib Rizwan Rabani
+Roll No: 23K-0012
+Date: 31/10/2023
+Desc: Multiply 2 numbers without using multiplication operator.
+*/
+
 #include <stdio.h>
 
 int mult(int temp,int a, int b){
