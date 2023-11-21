@@ -27,7 +27,7 @@ int main() {
         else if(emp[i].hours == 10 || emp[i].hours == 11){
             emp[i].salary = emp[i].salary + 100;
         }
-        else if(emp[i].hours > 12){
+        else if(emp[i].hours >= 12){
             emp[i].salary = emp[i].salary + 150;
         }
     }
