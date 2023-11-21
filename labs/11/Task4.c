@@ -11,7 +11,7 @@ struct data{
 int main() {
     struct data emp[10];
     
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < 10; i++){
         printf("Enter the name: ");
         scanf("%s",&emp[i].name);
         printf("Enter the salary: ");
@@ -20,7 +20,7 @@ int main() {
         scanf("%d",&emp[i].hours);
     }
     
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < 10; i++){
         if(emp[i].hours == 8){
             emp[i].salary = emp[i].salary + 50;
         }
@@ -32,7 +32,7 @@ int main() {
         }
     }
     
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < 10; i++){
         printf("Salary will become: %d\n",emp[i].salary);
     }
 
