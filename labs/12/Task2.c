@@ -1,69 +1,42 @@
-/*
-  Programmer: Raghib Rizwan Rabani
-  Roll No: 23K-0012
-  Desc: Comparing 2 binary files.
-  */
-
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h>>
 
-void createWordFile(const char *filename, const char *text) {
-    FILE *file = fopen(filename, "w");
-
-    if (file == NULL) {
-        perror("Error creating file");
-        exit(EXIT_FAILURE);
+int compare_files(FILE *fptr1, FILE *fptr2) {
+    unsigned long pos;
+    int c1, c2;
+    for (pos = 0;; pos++) {
+        c1 = getc(fptr1);
+        c2 = getc(fptr2);
+        if (c1 != c2 || c1 == EOF)
+            break;
     }
-
-    fprintf(file, "%s", text);
-
-    fclose(file);
-}
-
-int compareFiles(const char *file1, const char *file2) {
-    FILE *f1 = fopen(file1, "rb");
-    FILE *f2 = fopen(file2, "rb");
-
-    if (f1 == NULL || f2 == NULL) {
-        perror("Error opening files for comparison");
-        exit(EXIT_FAILURE);
-    }
-
-    int ch1, ch2;
-    while ((ch1 = fgetc(f1)) != EOF && (ch2 = fgetc(f2)) != EOF) {
-        if (ch1 != ch2) {
-            fclose(f1);
-            fclose(f2);
-            return 0; // Files are not equal
-        }
-    }
-
-    fclose(f1);
-    fclose(f2);
-
-    // If one file is longer than the other, they are not equal
-    if (ch1 != ch2) {
-        return 0;
-    }
-
-    return 1; // Files are equal
-}
-
-int main() {
-    const char *file1 = "file1.docx";
-    const char *file2 = "file2.docx";
-    const char *text = "This is a test.";
-
-    // Create two Word files
-    createWordFile(file1, text);
-    createWordFile(file2, text);
-
-    // Compare the contents of the files
-    if (compareFiles(file1, file2)) {
-        printf("Files are equal.\n");
+    if (c1 == c2) {
+        printf("files are identical and have %lu bytes\n", pos);
+        return 0;  // files are identical
+    } else
+    if (c1 == EOF) {
+        printf("file1 is included in file2, the first %lu bytes are identical\n", pos);
+        return 1;
+    } else
+    if (c2 == EOF) {
+        printf("file2 is included in file1, the first %lu bytes are identical\n", pos);
+        return 2;
     } else {
-        printf("Files are not equal.\n");
+        printf("file1 and file2 differ at position %lu: 0x%02X <> 0x%02X\n", pos, c1, c2);
+        return 3;
     }
+}
 
-    return 0;
+int main()
+{
+
+	FILE* fptr1;
+	FILE* fptr2;
+	fptr1= fopen("t1.docx", "w");
+	fptr2=fopen("t2.docx","w");
+	fprintf(fptr1,"%s %s %s %s","this","is","a","test");
+	fprintf(fptr2,"%s %s %s %s","this","is","a","test");
+	fptr1= fopen("t1.docx", "rb");
+	fptr2=fopen("t2.docx","rb");
+	compare_files(fptr1,fptr2);
 }
