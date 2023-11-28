@@ -1,15 +1,10 @@
-/*
-  Programmer: Raghib Rizwan Rabani
-  Roll No: 23K-0012
-  Desc: Filing
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 # define SIZE 100
 
-int line(cgar str[100]){
+int line(char str[100]){
   char delim[2] = ",";
   int cols = 0;
   char *col = strtok(str,delim);
@@ -36,7 +31,7 @@ void read(FILE* ptr){
 }
 
 int main(){
-  FILE* ptr = fopen("table.csv" , "r");
+  FILE* ptr = fopen("task1.txt" , "r");
   read(ptr);
   fclose(ptr);
 }
