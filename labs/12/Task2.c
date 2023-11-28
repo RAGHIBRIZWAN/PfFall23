@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>>
+#include <stdlib.h>
 
 int compare_files(FILE *fptr1, FILE *fptr2) {
     unsigned long pos;
