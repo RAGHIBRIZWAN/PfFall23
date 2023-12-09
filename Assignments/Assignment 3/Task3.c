@@ -25,7 +25,7 @@ int main(){
     scanf("%s", enter_id);
 
     char name[20], line[100], salary[10],line2[100],comb[100];
-    FILE *a = fopen("persnol.txt", "r");
+    FILE *a = fopen("personal.txt", "r");
     if(a == NULL){
         printf("Error opening file");
         return 1;
