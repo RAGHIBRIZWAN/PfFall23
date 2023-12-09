@@ -3,86 +3,73 @@
  *    Desc: Takes entries for different files and then combines them together in a seprate file according tot he IDs
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
-#define BUFFER_SIZE 30
-#define f_personal "Personal.txt"
-#define f_department "Department.txt"
-#define f_combine "Combine.txt"
+char* tokenize(char line[100], char id[3]){
+    char delim[2]=" ";
+    char *temp = strtok(line, delim);
+    while(temp != NULL){
+        if(strcmp(id, temp) == 0){
+            return strtok(NULL, "\n");
+        }
+        temp = strtok(NULL, delim);
+    }
+    return NULL; // Return NULL if ID is not found
+}
 
-char *get_record(char *id, FILE *fp)
-{
-	if (fp == NULL) return NULL;
+int main(){
+    char enter_id[3];
+    printf("Enter ID: ");
+    scanf("%s", enter_id);
 
-	char buffer[BUFFER_SIZE], delim[2] = ",";
-	char *record = (char *)malloc(sizeof(char) * BUFFER_SIZE);
-
-	while (!feof(fp)) {
-		fgets(buffer, BUFFER_SIZE, fp);
-		buffer[strcspn(buffer, "\n")] = 0;
-
-		char *record_id = strtok(buffer, delim);
-
-		if (!strcmp(id, record_id)) {
-			strcpy(record, strtok(NULL, delim));
-			return record;
-		}
+    char name[20], line[100], salary[10],line2[100],comb[100];
+    FILE *a = fopen("persnol.txt", "r");
+    if(a == NULL){
+        printf("Error opening file");
+        return 1;
+    }
+	 while (fgets(line, sizeof(line), a) != NULL) {
+        char *found_name = tokenize(line, enter_id);
+        if (found_name != NULL) {
+            strcpy(name,found_name);
+            printf("Name: %s\n", name);
+            break; // Stop searching once the name is found
+        }
+    }
+    fclose(a);
+    
+    
+     FILE *b = fopen("department.txt", "r");
+    if(b == NULL){
+        printf("Error opening file");
+        return 1;
+    }
+	 while (fgets(line2, sizeof(line2), b) != NULL) {
+        char *found_salary = tokenize(line2, enter_id);
+        if (found_salary != NULL) {
+            strcpy(salary,found_salary);
+            printf("Salary: %s", salary);
+            break; // Stop searching once the salary is found
+        }
+    }
+    fclose(b);
+    	strcat(comb,enter_id);
+    	strcat(comb," ");
+    	strcat(comb,name);
+    	strcat(comb," ");
+    	strcat(comb,salary);
+    	strcat(comb,"\n");
+    	
+    printf(" \nall data %s", comb);	
+    
+    FILE *c= fopen("combine.txt","a+");
+    if(c == NULL){
+    	printf("Error in opening file");
 	}
-
-	return NULL;
-} // end get_record()
-
-bool check_record(char *id, FILE *fp)
-{
-	if (fp == NULL) return false;
-
-	char buffer[BUFFER_SIZE], delim[2] = ",";
-
-	while (!feof(fp)) {
-		fgets(buffer, BUFFER_SIZE, fp);
-		buffer[strcspn(buffer, "\n")] = 0;
-
-		char *record_id = strtok(buffer, delim);
-		if (!strcmp(record_id, id)) return true;
-	}
-
-	return false;
-} // end check_record()
-
-int main()
-{
-	char id[BUFFER_SIZE], merge[BUFFER_SIZE * 2];
-
-	printf("Enter ID to merge: ");
-	fgets(id, BUFFER_SIZE, stdin);
-	id[strcspn(id, "\n")] = 0;
-
-	FILE *personal = fopen(f_personal, "r"), *department = fopen(f_department, "r"), *combine = fopen(f_combine, "r");
-	char *name = get_record(id, personal), *salary = get_record(id, department);
-
-	if (name == NULL || salary == NULL) {
-		printf("Record missing in either both or one file!");
-		return 0;
-	}
-
-	fclose(department), fclose(personal);
+    fprintf(c,comb)	;
+    fclose(c);
 	
-	if (!check_record(id, combine)) {
-		fclose(combine);
-		combine = fopen(f_combine, "a");
-
-		sprintf(merge, "%s,%s,%s\n", id, name, salary);
-		fputs(merge, combine);
-
-		printf("Record merged and appended successfully!");
-	} else {
-		printf("Record already exists!");
-	}
-
-	fclose(combine);
-
-	return 0;
-} // end main()
+    return 0;
+}
