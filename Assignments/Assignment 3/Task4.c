@@ -3,109 +3,56 @@
  *    Desc: Displays the highest salary employees and total salaries for each department
  */
 
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
-typedef struct {
-	int worker_ref_id;
-	char bonus_date[20];
-	int bonus_amount;
-} Bonus;
+typedef struct worker{
+    int worker_id;
+    char f_name[30];
+    char l_name[30];
+    int salary;
+    char join[30];
+    char dept[30];
+    
+}worker;
 
-typedef struct {
-	int worker_ref_id;
-	char worker_title[15];
-	char affected_from[20];
-} Title;
+int main() {
+    worker workers[8] = {
+        {001,"Monika","Arora",100000,"2014-2-20 9:00;00", "Hr"},
+        {002,"Niharika","Verma",80000,"2014-6-11 9:00;00", "Admin"},
+        {003,"Vishal","Singhal",300000,"2014-2-20 9:00;00", "Hr"},
+        {004,"Amitabh","Singh",500000,"2014-2-20 9:00;00", "Admin"},
+        {005,"Vivek","Bhatti",500000,"2014-6-11 9:00;00", "Admin"},
+        {006,"Vipul","Dihwan",200000,"2014-6-11 9:00;00","Account"},
+        {007,"Satish","Kumar",75000,"2014-1-20 9:00;00", "Account"},
+        {8,"Greetika","Chauhan",90000,"2014-4-11 9:00;00","Admin"}
+    };
 
-typedef struct {
-	char worker_id[4];
-	char first_name[10];
-	char last_name[10];
-	int salary;
-	char joining_date[20];
-	char department[10];
-} Worker;
+    char* department[3] = {"Hr", "Admin", "Account"};
+    int total_salaries[3];
+    int max_salary = 0, me = 0;// me for max_employee
 
-char *departs_name[3] = {"HR", "Admin", "Account"};
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 8; j++) {
+            if (strcmp(department[i], workers[j].dept) == 0) {
+                int salary = workers[j].salary;
+                total_salaries[i] += salary;
+                if (max_salary < salary) {
+                    max_salary = salary;
+                    me = j;
+                }
+            }
+        }
+        printf("| %d\t | %s\t | %s\t | %d\t | %s\t | %s\t \n",workers[me].worker_id,workers[me].f_name,workers[me].l_name,workers[me].salary,workers[me].join,workers[me].dept);
+        max_salary = 0;
+        me = 0;
+        
+    }
 
-Worker get_max_salary_worker(Worker workers[], int n, char *depart)
-{
-	int max_salary = 1 << 31, worker;
-
-	for (int i = 0; i < n; i++)
-		if (!strcmp(workers[i].department, depart))
-			if (workers[i].salary > max_salary) max_salary = workers[i].salary, worker = i;
-
-	return workers[worker];
-} // end get_max_salary_worker()
-
-int get_total_salary(Worker workers[], int n, char *depart)
-{
-	int total_salary = 0;
-
-	for (int i = 0; i < n; i++)
-		if (!strcmp(workers[i].department, depart))
-			total_salary += workers[i].salary;
-
-	return total_salary;
-} // end get_total_salary()
-
-void show_all_max(Worker workers[], int n)
-{
-	for (int i = 0; i < 3; i++) {
-		Worker worker = get_max_salary_worker(workers, 8, departs_name[i]);
-
-		char *joining_date = strtok(worker.joining_date, " ");
-
-		printf(" %-5s| %-11s| %-11s| %-11d| %-13s| %-11s|\n", 
-			worker.worker_id, worker.first_name, worker.last_name, worker.salary, joining_date, worker.department
-		);
-	}
-} // end show_all_max()
-
-void show_all_total(Worker workers[], int n)
-{
-	for (int i = 0; i < 3; i++)
-		printf("%s - %d\n", departs_name[i], get_total_salary(workers, n, departs_name[i]));
-} // end show_all_total()
-
-int main()
-{
-	Worker workers[8] = {
-		{"001", "Monika", "Arora", 100000, "2014-02-20 09:00:00", "HR"},
-		{"002", "Niharika", "Verma", 80000, "2014-06-11 09:00:00", "Admin"},
-		{"003", "Vishal", "Singhal", 300000, "2014-02-20 09:00:00", "HR"},
-		{"004", "Amitabh", "Singh", 500000, "2014-02-20 09:00:00", "Admin"},
-		{"005", "Vivek", "Bhati", 500000, "2014-06-11 09:00:00", "Admin"},
-		{"006", "Vipul", "Dewan", 200000, "2014-06-11 09:00:00", "Account"},
-		{"007", "Satish", "Kumar", 75000, "2014-01-20 09:00:00", "Account"},
-		{"008", "Geetika", "Chauhan", 90000, "2014-04-11 09:00:00", "Admin"},
-	};
-
-	Bonus bonuses[5] = {
-		{1, "2016-02-20 00:00:00", 5000},
-		{2, "2016-06-11 00:00:00", 3000},
-		{3, "2016-02-20 00:00:00", 4000},
-		{1, "2016-02-20 00:00:00", 4500},
-		{2, "2016-06-11 00:00:00", 3500}
-	};
-
-	Title titles[8] = {
-		{1, "Manager", "2016-02-20 00:00:00"},
-		{2, "Executive", "2016-06-11 00:00:00"},
-		{8, "Executive", "2016-06-11 00:00:00"},
-		{5, "Manager", "2016-06-11 00:00:00"},
-		{4, "Manager", "2016-06-11 00:00:00"},
-		{7, "Asst. Manager", "2016-06-11 00:00:00"},
-		{6, "Executive", "2016-06-11 00:00:00"},
-		{3, "Lead", "2016-06-11 00:00:00"}
-	};
-
-	printf("Highest salaries:\n");
-	show_all_max(workers, 8);
-	printf("\nTotal salaries:\n");
-	show_all_total(workers, 8);
-	
-	return 0;
-} // end main()
+printf("\nTotal Salaries Given to each department:\n");
+for(int i=0;i<3;i++){
+        printf("Department %s Salary=%d\n",department[i],total_salaries[i]);
+}
+    return 0;
+}
