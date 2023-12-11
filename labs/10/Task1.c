@@ -1,10 +1,10 @@
 #include <stdio.h>
-
+#include <string.h>
 void array(void* arr, int size,int datatype){
     switch (datatype)
     {
     case 1:
-        for (int i = 0; i < size / sizeof(arr); i++)
+        for (int i = 0; i < size/sizeof(int); i++)
         {
             printf("%d\n",*((int*)arr + i));
         }
@@ -28,7 +28,7 @@ int main(){
     int size;
     int arr[] = {1,2,3,4,5};
     char brr[] = {'a','b','c','d','e'};
-    
     array(arr,sizeof(arr),1);
     array(brr,sizeof(brr),2);
+
 }
