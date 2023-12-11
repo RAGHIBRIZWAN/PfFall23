@@ -1,7 +1,7 @@
 /*
 * Programmer = Raghib Rizwan Rabani
 * Roll no: = 23K0012
-* Desc: To rotate Array  left by d position.
+* Desc: Division without division operator
 */
 
 #include <stdio.h>
