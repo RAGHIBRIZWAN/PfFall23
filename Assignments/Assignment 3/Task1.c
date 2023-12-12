@@ -75,7 +75,7 @@ int **get_sub_matrix(int **mat, int n)
 
 int main(int argc, char const *argv[])
 {
-	printf("Creator: Fasih Hasan Khan\nID: 23K-0018\n\n");
+	printf("Creator: Raghib Rizwan Rabani\nID: 23K-0012\n\n");
 	int n = atoi(argv[1]);
 
 	while (!(n == 2 || n == 4 || n == 8)) {
